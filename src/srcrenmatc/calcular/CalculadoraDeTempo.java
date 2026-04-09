@@ -23,4 +23,10 @@ public class CalculadoraDeTempo {
         tempoTotal += s.getDuracaoEmMinutos();
     }
 */
+//    public void inclui(Filme f){
+//        tempoTotal += f.getDuracaoEmMinutos();
+//    }
+//    public void inclui(Serie s){
+//        tempoTotal += s.getDuracaoEmMinutos();
+//    }
 }
