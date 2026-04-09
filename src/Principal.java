@@ -1,5 +1,6 @@
 import br.com.alura.screenmatch.Filme;
 import br.com.alura.screenmatch.Serie;
+import srcrenmatc.calcular.CalculadoraDeTempo;
 
 public class Principal {
     public static void main(String[] args) {
@@ -25,5 +26,15 @@ public class Principal {
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração da :"+ lost.getDuracaoEmMinutos()+" Minutos.");
 
+        Filme outroFilme = new Filme();
+        outroFilme.setNome ("Avatar");
+        outroFilme.setAnoDeLancamento(2000);
+        outroFilme.setDuracaoEmMinutos(200);
+
+        CalculadoraDeTempo calculador = new CalculadoraDeTempo();
+        calculador.inclui(meuFilme);
+        calculador.inclui(outroFilme);
+        calculador.inclui(lost);
+        System.out.println("Tempo da :"+ calculador.getTempoTotal());
     }
 }
