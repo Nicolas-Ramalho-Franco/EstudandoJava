@@ -1,6 +1,7 @@
 import br.com.alura.screenmatch.Filme;
 import br.com.alura.screenmatch.Serie;
 import srcrenmatc.calcular.CalculadoraDeTempo;
+import srcrenmatc.calcular.FiltroRecomendacao;
 
 public class Principal {
     public static void main(String[] args) {
@@ -36,5 +37,8 @@ public class Principal {
         calculador.inclui(outroFilme);
         calculador.inclui(lost);
         System.out.println("Tempo da :"+ calculador.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
     }
 }

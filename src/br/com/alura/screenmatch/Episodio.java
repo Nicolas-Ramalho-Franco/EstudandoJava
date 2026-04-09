@@ -1,9 +1,20 @@
 package br.com.alura.screenmatch;
 
-public class Episodio {
+import srcrenmatc.calcular.Classificacao;
+
+public class Episodio implements Classificacao {
     private int numero;
     private String nome;
     private Serie serie;
+    private int totalVisualizacoes;
+
+    public int getTotalVisualizacoes() {
+        return totalVisualizacoes;
+    }
+
+    public void setTotalVisualizacoes(int totalVisualizacoes) {
+        this.totalVisualizacoes = totalVisualizacoes;
+    }
 
     public int getNumero() {
         return numero;
@@ -27,5 +38,15 @@ public class Episodio {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public int getClassificacao() {
+        if (totalVisualizacoes >100){
+            return 4;
+        }else {
+            return 2;
+        }
+
     }
 }
