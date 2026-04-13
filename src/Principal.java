@@ -1,7 +1,11 @@
+import br.com.alura.screenmatch.Episodio;
 import br.com.alura.screenmatch.Filme;
 import br.com.alura.screenmatch.Serie;
 import srcrenmatc.calcular.CalculadoraDeTempo;
 import srcrenmatc.calcular.FiltroRecomendacao;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
@@ -40,5 +44,26 @@ public class Principal {
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
+
+        var filmedonicolas =new Filme();
+        filmedonicolas.setDuracaoEmMinutos(200);
+        filmedonicolas.setNome("Dog see");
+        filmedonicolas.setAnoDeLancamento(2020);
+        filmedonicolas.avalia(10);
+
+        ArrayList<Filme> listadefilmes = new ArrayList<>();//Array em java
+        listadefilmes.add(filmedonicolas);
+        listadefilmes.add(meuFilme);
+        listadefilmes.add(outroFilme);
+
+        System.out.println("Tamalho da lista :"+ listadefilmes.size());
+        System.out.println("Primeiro filme :"+listadefilmes.get(0).getNome());
+
     }
 }
