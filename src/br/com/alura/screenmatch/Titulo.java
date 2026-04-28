@@ -1,7 +1,11 @@
 package br.com.alura.screenmatch;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")//so to dizendo q quando ele for ler o nome ele tbm como title a palavra chave
     private String nome;
+    @SerializedName("Year") // so estou dizendo que o ano e isso aqui
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -11,6 +15,12 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meutituloOmdb) {
+        this.nome = meutituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(meutituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meutituloOmdb.runtime().substring(0, 2));
     }
 
     public String getNome() {
@@ -78,5 +88,11 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());//Comparando um titulo com o outro
+    }
+
+    @Override
+    public String toString() {
+        return STR."Titulo:nome='\{nome}', anoDeLancamento=\{anoDeLancamento},DuracaoEmMinutos=\{duracaoEmMinutos}"
+                ;
     }
 }

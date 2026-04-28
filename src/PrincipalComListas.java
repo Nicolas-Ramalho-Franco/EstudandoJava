@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class PrincipalComListas {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Filme meuFilme = new Filme("Meu malvado favorito",2019);
         meuFilme.avalia(10);
         var filmedonicolas =new Filme("Milly",2020);
@@ -16,8 +16,6 @@ public class PrincipalComListas {
         Filme outroFilme = new Filme("Avatar",2000);
         outroFilme.avalia(10);
         Serie lost = new Serie("lost",2020);
-
-
         //Filme f1 = filmedonicolas;
         //f1.avalia(10);
 
