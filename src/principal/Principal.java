@@ -70,6 +70,5 @@ public class Principal {
         System.out.println("Primeiro filme :"+listadefilmes.get(0).getNome());
         System.out.println(listadefilmes);
 
-
     }
 }
