@@ -48,6 +48,8 @@ public class PrincipalComBusca {
              System.out.println("Algum erro de argumento na busca, verifique o endereço");
          } catch (ErroDeConversaoDeAnoException e) {
              System.out.println(e.getMessage());
+         } catch (NullPointerException e) {
+             System.out.println("Houve um erro na pesquisa do seu filme");
          }
          System.out.println("O programa finalizou corretamente!");
 
