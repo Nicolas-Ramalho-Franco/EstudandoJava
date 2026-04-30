@@ -12,6 +12,9 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrincipalComBusca {
@@ -19,7 +22,7 @@ public class PrincipalComBusca {
          Scanner leitura = new Scanner(System.in);
          System.out.println("Digite um filme para busca: ");
          var busca = leitura.nextLine();
-
+         List<String> favoritos = new ArrayList<>();
          String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=d89e1620";
          try {
              HttpClient client = HttpClient.newHttpClient();
@@ -41,6 +44,16 @@ public class PrincipalComBusca {
              Titulo meuTitulo = new Titulo(meuTituloOmdb);
              System.out.println("Titulo já convertido");
              System.out.println(meuTitulo);
+             System.out.println(meuTituloOmdb.title());// exibindo o nome da variavel desejada
+
+             System.out.println("Deseja adicionar aos favoritos? Sim/nao");
+             var fav = leitura.nextLine();
+             if (fav.equals("Sim")) {
+                 Collections.addAll(favoritos, meuTituloOmdb.title(),meuTituloOmdb.year());
+             }
+
+             System.out.println(favoritos);
+
          } catch (NumberFormatException e) {
              System.out.println("Aconteceu um erro: ");
              System.out.println(e.getMessage());
